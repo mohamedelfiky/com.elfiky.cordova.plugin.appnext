@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.elfiky.cordova.plugin.appnext"
+        version="1.0">
+
+    <name>AppNextPlugin</name>
+
+    <engines>
+        <engine name="cordova" version=">=3.4.0"/>
+    </engines>
+
+    <asset src="js/AppnextPlugin.js" target="js/AppnextPlugin.js"/>
+
+    <js-module src="js/mobile_core.js" name="mobileCore">
+        <clobbers target="mobileCore"/>
+    </js-module>
+
+    <feature name="Appnext">
+        <param name="android-package" value="com.appnext.appnextsdk.cordova.AppnextPlugin" />
+    </feature>
+
+    <platform name="android">
+
+        <source-file src="android/AppnextSDK.jar" target-dir="libs" />
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <service android:name="com.appnext.appnextsdk.DownloadService"/>
+        </config-file>
+
+    </platform>
+
+</plugin>
