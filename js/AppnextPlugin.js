@@ -20,3 +20,5 @@ var AppnextPlugin = {
       return cordova.exec(successCallback, failureCallback, 'Appnext', 'setAdsCallback', []);
     }
 };
+
+module.exports= AppnextPlugin;
