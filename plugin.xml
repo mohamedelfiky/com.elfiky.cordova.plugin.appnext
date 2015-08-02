@@ -16,16 +16,20 @@
     </js-module>
 
 
-
     <platform name="android">
+        <source-file src="android/AppNextVideoPlugin.java" target-dir="src/com/elfiky/cordova/plugin/appnext/" />
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Appnext">
                 <param name="android-package" value="com.appnext.appnextsdk.cordova.AppnextPlugin"/>
             </feature>
+            <feature name="AppnextVideoAd">
+                <param name="android-package" value="com.elfiky.cordova.plugin.appnext.AppNextVideoPlugin"/>
+            </feature>
         </config-file>
 
         <source-file src="android/AppnextSDK.jar" target-dir="libs"/>
+        <source-file src="android/VideoInterstitialSDK.jar" target-dir="libs"/>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <service android:name="com.appnext.appnextsdk.DownloadService"/>
