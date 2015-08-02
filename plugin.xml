@@ -16,12 +16,13 @@
     </js-module>
 
     <feature name="Appnext">
-        <param name="android-package" value="com.appnext.appnextsdk.cordova.AppnextPlugin" />
+        <param name="android-package" value="com.appnext.appnextsdk.cordova.AppnextPlugin"/>
     </feature>
 
     <platform name="android">
+        <dependency id="com.google.playservices@19.0.0" />
 
-        <source-file src="android/AppnextSDK.jar" target-dir="libs" />
+        <source-file src="android/AppnextSDK.jar" target-dir="libs"/>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <service android:name="com.appnext.appnextsdk.DownloadService"/>
