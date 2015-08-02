@@ -1,16 +1,16 @@
 var Appnext = {
 
-  initializeWithPlacementID: function (placementID) {
-    return cordova.exec(null, null, 'Appnext', 'initializeWithPlacementID', [placementID]);
+  initializeWithPlacementID: function (placementID, successCallback, errorCallback) {
+    return cordova.exec(successCallback, errorCallback, 'Appnext', 'initializeWithPlacementID', [placementID]);
   }
-  , showPopup: function () {
-    return cordova.exec(null, null, 'Appnext', 'showPopup', []);
+  , showPopup: function (successCallback, errorCallback) {
+    return cordova.exec(successCallback, errorCallback, 'Appnext', 'showPopup', []);
   }
-  , hidePopup: function () {
-    return cordova.exec(null, null, 'Appnext', 'hidePopup', []);
+  , hidePopup: function (successCallback, errorCallback) {
+    return cordova.exec(successCallback, errorCallback, 'Appnext', 'hidePopup', []);
   }
-  , cacheAd: function () {
-    return cordova.exec(null, null, 'Appnext', 'cacheAd', []);
+  , cacheAd: function (successCallback, errorCallback) {
+    return cordova.exec(successCallback, errorCallback, 'Appnext', 'cacheAd', []);
   }
   , isVisible: function (successCallback) {
     return cordova.exec(successCallback, null, 'Appnext', 'isVisible', []);
