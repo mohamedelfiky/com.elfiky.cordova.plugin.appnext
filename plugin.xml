@@ -33,6 +33,10 @@
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <service android:name="com.appnext.appnextsdk.DownloadService"/>
+            <activity android:name="com.appnext.appnextinterstitial.InterstitialActivity"
+                      android:theme="@android:style/Theme.Translucent" android:process=":remote"
+                      android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" />
+            <service android:name="com.appnext.appnextinterstitial.DownloadService"/>
         </config-file>
 
     </platform>
