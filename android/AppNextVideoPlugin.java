@@ -42,7 +42,7 @@ public class AppNextVideoPlugin extends CordovaPlugin {
 			@Override
 			public void run() {
 				try {
-					InterstitialManager.showInterstitial(this,dev_placement_id , InterstitialManager.FULL_SCREEN_VIDEO);
+					InterstitialManager.showInterstitial(cordova.getActivity(),dev_placement_id , InterstitialManager.FULL_SCREEN_VIDEO);
 
 					Log.v(TAG, "Show mobilecore ad Interstitial");
 				} catch (Exception ex) {
