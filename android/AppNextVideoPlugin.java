@@ -6,6 +6,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import com.appnext.appnextinterstitial.InterstitialManager;
+import com.appnext.appnextinterstitial.OnAdError;
+import com.appnext.appnextinterstitial.OnAdLoaded;
 
 import android.util.Log;
 
@@ -42,8 +44,31 @@ public class AppNextVideoPlugin extends CordovaPlugin {
 			@Override
 			public void run() {
 				try {
-					InterstitialManager.showInterstitial(cordova.getActivity(),dev_placement_id , InterstitialManager.FULL_SCREEN_VIDEO);
+					Log.v(TAG,"dev_placement: "+ dev_placement_id);
+					InterstitialManager.showInterstitial(cordova.getActivity(),
+							dev_placement_id,
+							InterstitialManager.REWARDED_VIDEO);
+					InterstitialManager.cacheInterstitial(cordova.getActivity(),
+							dev_placement_id,
+							InterstitialManager.REWARDED_VIDEO);
+					InterstitialManager.setOnAdErrorCallback(new OnAdError() {
 
+						@Override
+						public void adError(String arg0) {
+							// TODO Auto-generated method stub
+
+							Log.e(TAG, "error video: " + arg0);
+						}
+					});
+
+					InterstitialManager.setOnAdLoadedCallback(new OnAdLoaded() {
+
+						@Override
+						public void adLoaded() {
+							// TODO Auto-generated method stub
+							Log.v(TAG, "Show appnext video ad loaded");
+						}
+					});
 					Log.v(TAG, "Show mobilecore ad Interstitial");
 				} catch (Exception ex) {
 					Log.e(TAG, "error error error error ");
@@ -57,7 +82,6 @@ public class AppNextVideoPlugin extends CordovaPlugin {
 		return null;
 	}
 
-	
 	private void setOptions(JSONObject options) {
 		if (options == null)
 			return;

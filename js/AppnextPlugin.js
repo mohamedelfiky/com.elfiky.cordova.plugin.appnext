@@ -18,8 +18,8 @@ var Appnext = {
   , setAdsCallback: function (successCallback, failureCallback) {
     return cordova.exec(successCallback, failureCallback, 'Appnext', 'setAdsCallback', []);
   }
-  , showVideo: function (successCallback, failureCallback) {
-    return cordova.exec(successCallback, failureCallback, 'AppNextVideoPlugin', 'show_video', []);
+  , showVideo: function (successCallback, failureCallback,options) {
+    return cordova.exec(successCallback, failureCallback, 'AppNextVideoPlugin', 'show_video', options);
   }
 };
 
