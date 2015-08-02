@@ -15,11 +15,15 @@
         <clobbers target="Appnext"/>
     </js-module>
 
-    <feature name="Appnext">
-        <param name="android-package" value="com.appnext.appnextsdk.cordova.AppnextPlugin"/>
-    </feature>
+
 
     <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Appnext">
+                <param name="android-package" value="com.appnext.appnextsdk.cordova.AppnextPlugin"/>
+            </feature>
+        </config-file>
 
         <source-file src="android/AppnextSDK.jar" target-dir="libs"/>
 
