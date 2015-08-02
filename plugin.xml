@@ -12,7 +12,7 @@
     <asset src="js/AppnextPlugin.js" target="js/AppnextPlugin.js"/>
 
     <js-module src="js/AppnextPlugin.js" name="Appnext">
-        <clobbers target="mobileCore"/>
+        <clobbers target="Appnext"/>
     </js-module>
 
     <feature name="Appnext">

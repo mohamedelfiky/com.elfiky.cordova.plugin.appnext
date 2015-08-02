@@ -1,4 +1,4 @@
-var AppnextPlugin = {
+var Appnext = {
 
   initializeWithPlacementID: function (placementID) {
     return cordova.exec(null, null, 'Appnext', 'initializeWithPlacementID', [placementID]);
@@ -20,4 +20,4 @@ var AppnextPlugin = {
   }
 };
 
-module.exports = AppnextPlugin;
+module.exports = Appnext;
